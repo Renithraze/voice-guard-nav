@@ -14,7 +14,120 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      auth_attempts: {
+        Row: {
+          created_at: string
+          detail: string | null
+          id: string
+          method: string
+          result: string
+          score: number | null
+          threshold: number | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          detail?: string | null
+          id?: string
+          method: string
+          result: string
+          score?: number | null
+          threshold?: number | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          detail?: string | null
+          id?: string
+          method?: string
+          result?: string
+          score?: number | null
+          threshold?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          pin_hash: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id: string
+          pin_hash?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          pin_hash?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      voice_challenges: {
+        Row: {
+          created_at: string
+          expires_at: string
+          id: string
+          phrase: string
+          purpose: string
+          used_at: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          phrase: string
+          purpose?: string
+          used_at?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string
+          id?: string
+          phrase?: string
+          purpose?: string
+          used_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      voiceprints: {
+        Row: {
+          created_at: string
+          dim: number
+          embedding_cipher: string
+          sample_count: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          dim: number
+          embedding_cipher: string
+          sample_count?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          dim?: number
+          embedding_cipher?: string
+          sample_count?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
